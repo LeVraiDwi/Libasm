@@ -1,0 +1,91 @@
+NASM Output format debug dump
+input file  = exemple_asm/operations_logique.s
+output file = exemple_asm/operations_logique.dbg
+   With debug info
+*** pass reset: pass = 1 (first)
+section_name on init: returning 2
+section_names .data () pass 1 (first) : returning 4
+deflabel .data := 00000005:0000000000000000 local (0)(null)
+section_names .bss () pass 1 (first) : returning 6
+deflabel .bss := 00000007:0000000000000000 local (0)(null)
+section_names .text () pass 1 (first) : returning 8
+deflabel .text := 00000009:0000000000000000 local (0)(null)
+new type: label(0)
+new type: label(0)
+new type: label(0)
+new type: label(0)
+new type: label(0)
+new type: label(0)
+*** pass reset: pass = 2 (optimize)
+section_name on init: returning 2
+herelabel _start type 2 (seg 00000008) -> 00000008
+new type: label(0)
+new type: label(0)
+new type: label(0)
+herelabel exit type 0 (seg 00000008) -> 00000008
+new type: label(0)
+new type: label(0)
+new type: label(0)
+*** pass reset: pass = 3 (stabilize)
+section_name on init: returning 2
+herelabel _start type 2 (seg 00000008) -> 00000008
+deflabel _start := 00000008:0000000000000000 global (1)(null)
+dbglabel _start := 00000008:0000000000000000 global (1)(null)
+new type: label(0)
+new type: label(0)
+new type: label(0)
+herelabel exit type 0 (seg 00000008) -> 00000008
+deflabel exit := 00000008:000000000000000d local (0)(null)
+dbglabel exit := 00000008:000000000000000d local (0)(null)
+new type: label(0)
+new type: label(0)
+new type: label(0)
+*** pass reset: pass = 4 (final)
+section_name on init: returning 2
+herelabel _start type 2 (seg 00000008) -> 00000008
+dbglinenum exemple_asm/operations_logique.s(20) segment 8
+out to 8:0 rawdata wrap bits 64 insoffs 0/5 size 1 ins mov(2)
+  data: b8                                                 .               
+  legacy: out to 8, len = 1 (0x1): rawdata
+out to 8:1 rawdata wrap bits 64 insoffs 1/5 size 4 ins mov(2)
+  data: 0d 00 00 00                                        ....            
+  legacy: out to 8, len = 4 (0x4): rawdata
+dbglinenum exemple_asm/operations_logique.s(21) segment 8
+out to 8:5 rawdata wrap bits 64 insoffs 0/5 size 1 ins mov(2)
+  data: bb                                                 .               
+  legacy: out to 8, len = 1 (0x1): rawdata
+out to 8:6 rawdata wrap bits 64 insoffs 1/5 size 4 ins mov(2)
+  data: 02 00 00 00                                        ....            
+  legacy: out to 8, len = 4 (0x4): rawdata
+dbglinenum exemple_asm/operations_logique.s(25) segment 8
+out to 8:a rawdata wrap bits 64 insoffs 0/3 size 1 ins xor(2)
+  data: 48                                                 H               
+  legacy: out to 8, len = 1 (0x1): rawdata
+out to 8:b rawdata wrap bits 64 insoffs 1/3 size 1 ins xor(2)
+  data: 31                                                 1               
+  legacy: out to 8, len = 1 (0x1): rawdata
+out to 8:c rawdata wrap bits 64 insoffs 2/3 size 1 ins xor(2)
+  data: d8                                                 .               
+  legacy: out to 8, len = 1 (0x1): rawdata
+herelabel exit type 0 (seg 00000008) -> 00000008
+dbglinenum exemple_asm/operations_logique.s(28) segment 8
+out to 8:d rawdata wrap bits 64 insoffs 0/5 size 1 ins mov(2)
+  data: b8                                                 .               
+  legacy: out to 8, len = 1 (0x1): rawdata
+out to 8:e rawdata wrap bits 64 insoffs 1/5 size 4 ins mov(2)
+  data: 3c 00 00 00                                        <...            
+  legacy: out to 8, len = 4 (0x4): rawdata
+dbglinenum exemple_asm/operations_logique.s(29) segment 8
+out to 8:12 rawdata wrap bits 64 insoffs 0/3 size 1 ins xor(2)
+  data: 48                                                 H               
+  legacy: out to 8, len = 1 (0x1): rawdata
+out to 8:13 rawdata wrap bits 64 insoffs 1/3 size 1 ins xor(2)
+  data: 31                                                 1               
+  legacy: out to 8, len = 1 (0x1): rawdata
+out to 8:14 rawdata wrap bits 64 insoffs 2/3 size 1 ins xor(2)
+  data: ff                                                 .               
+  legacy: out to 8, len = 1 (0x1): rawdata
+dbglinenum exemple_asm/operations_logique.s(30) segment 8
+out to 8:15 rawdata wrap bits 64 insoffs 0/2 size 2 ins syscall(0)
+  data: 0f 05                                              ..              
+  legacy: out to 8, len = 2 (0x2): rawdata
