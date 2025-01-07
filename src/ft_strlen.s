@@ -1,5 +1,8 @@
 bits 64
 
+; int ft_strlen(char *s) => 1st argument rdi
+
+
 section .text
     global ft_strlen
     
